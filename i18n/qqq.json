@@ -15,7 +15,9 @@
 			"Nemo bis",
 			"Purodha",
 			"Amire80",
-			"Deryck Chan"
+			"Deryck Chan",
+			"Sergey Leschina",
+			"John Erling Blad"
 		]
 	},
 	"apihelp-templatedata-description": "{{doc-apihelp-description|templatedata}}",
@@ -66,6 +68,9 @@
 	"templatedata-exists-on-related-page": "A messaged that is displayed when there already is a templatedata string in a related page. $1: The page where templatedata already exists.",
 	"templatedata-helplink": "The label of the link to the TemplateData documentation, appearing above the editor field.",
 	"templatedata-helplink-target": "{{ignore}} The target of the link to the TemplateData documentation",
+	"templatedata-invalid-page-title": "Error message when the given page title is somehow invalid. This does not imply a missing page! Parameters:\n* $1 – page title",
+	"templatedata-invalid-page-no-templatedata": "Error message when the given page does not contain a TemplateData entry. This could also be due to a missing page. Parameters:\n* $1 – page title",
+	"templatedata-invalid-page-invalid-templatedata": "Error message when the given page contains invalid TemplateData. Parameters:\n * $1 – page title\n* $2 – status message",
 	"templatedata-invalid-duplicate-value": "Displayed when an array that must only contain unique values contains a duplicate.\n* $1 - name of property containing the duplicate\n* $2 - name of property with first occurrence of value\n* $3 - the value being duplicated",
 	"templatedata-invalid-empty-array": "Error message when a property that must be non-empty is empty. Parameters:\n* $1 - property name (\"paramOrder\" or \"sets.{$setNr}.params\")",
 	"templatedata-invalid-format": "{{Doc-important|Don't translate \"inline\" and \"block\".}}\n\nError message when format property gets an unexpected value.",
