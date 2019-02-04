@@ -157,4 +157,37 @@ class TemplateDataHooks {
 
 		return $ti->getHtml( $parser->getOptions()->getUserLangObj() );
 	}
+
+	/**
+	 * External Lua library paths for Scribunto
+	 *
+	 * @param any $engine to be used for the call
+	 * @param array &$extraLibraryPaths additional libs
+	 * @return bool
+	 */
+	public static function onRegisterScribuntoExternalLibraryPaths(
+		$engine,
+		array &$extraLibraryPaths
+	) {
+		if ( $engine !== 'lua' ) {
+			return true;
+		}
+		// Path containing pure Lua libraries that don't need to interact with PHP
+		$extraLibraryPaths[] = __DIR__ . '/lua/pure';
+		return true;
+	}
+
+	/**
+	 * Parser hook registering the Scribunto functions.
+	 *
+	 * @param mixed $engine
+	 * @param array &$extraLibraries
+	 * @return bool
+	 */
+	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ) {
+		if ( $engine === 'lua' ) {
+			$extraLibraries['mw.ext.TemplateData'] = 'ScribuntoLuaTemplateDataLibrary';
+		}
+		return true;
+	}
 }

@@ -8,6 +8,8 @@
 		"Trevor Parscal",
 		"Bartosz Dziewoński",
 		"Marielle Volz",
+		"Sergey Leschina",
+		"John Erling Blad",
 		"..."
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:TemplateData",
@@ -23,7 +25,13 @@
 	"AutoloadClasses": {
 		"TemplateDataHooks": "includes/TemplateDataHooks.php",
 		"TemplateDataBlob": "includes/TemplateDataBlob.php",
-		"ApiTemplateData": "includes/api/ApiTemplateData.php"
+		"ApiTemplateData": "includes/api/ApiTemplateData.php",
+		"ScribuntoLuaTemplateDataLibrary": "includes/lua/ScribuntoLuaTemplateDataLibrary.php"
+	},
+	"config": {
+		"TemplateDataTime": 120,
+		"TemplateDataSize": 8,
+		"TemplateDataUseGUI": true
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
@@ -40,7 +48,13 @@
 		],
 		"EditPage::showEditForm:initial": [
 			"TemplateDataHooks::onEditPage"
-		]
+		],
+		"ScribuntoExternalLibraries": [
+			"TemplateDataHooks::onScribuntoExternalLibraries"
+		],
+		"ScribuntoExternalLibraryPaths": [
+			"TemplateDataHooks::onRegisterScribuntoExternalLibraryPaths"
+]
 	},
 	"MessagesDirs": {
 		"TemplateData": [
@@ -224,8 +238,5 @@
 	"VisualEditorPluginModules": [
 		"ext.templateDataGenerator.editPage"
 	],
-	"config": {
-		"TemplateDataUseGUI": true
-	},
 	"manifest_version": 1
 }
