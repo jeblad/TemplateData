@@ -109,13 +109,12 @@ function TemplateData.setupInterface( options ) -- luacheck: no unused args
 
 	-- Register this library in the "mw" global
 	mw = mw or {}
-	mw.ext = mw.ext or {}
-	mw.ext.TemplateData = TemplateData
+	mw.templatedata = TemplateData
 
 	local Cache = require 'templatedata/Cache'
 	cache = Cache.create( options )
 
-	package.loaded['mw.ext.TemplateData'] = TemplateData
+	package.loaded['mw.templatedata'] = TemplateData
 end
 
 return TemplateData

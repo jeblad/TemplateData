@@ -22,7 +22,7 @@ class ScribuntoLuaTemplateDataLibrary extends Scribunto_LuaLibraryBase {
 			'size' => $wgTemplateDataSize,
 		];
 
-		return $this->getEngine()->registerInterface( __DIR__ . '/mw.ext.TemplateData.lua', $lib, $opts );
+		return $this->getEngine()->registerInterface( __DIR__ . '/TemplateData.lua', $lib, $opts );
 	}
 
 	/**
@@ -47,8 +47,8 @@ class ScribuntoLuaTemplateDataLibrary extends Scribunto_LuaLibraryBase {
 	 * @return array
 	 */
 	public function loadTemplateData( $title = null, $langCode = null ) {
-		$this->checkTypeOptional( 'mw.ext.TemplateData.load', 1, $title, 'string', '' );
-		$this->checkTypeOptional( 'mw.ext.TemplateData.load', 2, $langCode, 'string', '' );
+		$this->checkTypeOptional( 'mw.templatedata.load', 1, $title, 'string', '' );
+		$this->checkTypeOptional( 'mw.templatedata.load', 2, $langCode, 'string', '' );
 		$this->incrementExpensiveFunctionCount();
 
 		if ( $title === '' ) {

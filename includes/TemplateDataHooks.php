@@ -186,7 +186,7 @@ class TemplateDataHooks {
 	 */
 	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ) {
 		if ( $engine === 'lua' ) {
-			$extraLibraries['mw.ext.TemplateData'] = 'ScribuntoLuaTemplateDataLibrary';
+			$extraLibraries['mw.templatedata'] = 'ScribuntoLuaTemplateDataLibrary';
 		}
 		return true;
 	}
