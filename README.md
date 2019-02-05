@@ -23,4 +23,6 @@ Then add the following code at the bottom of your LocalSettings.php
 ```
 ## Documentation
 
+There are separate generated references for [the inline documentation](https://github.com/jeblad/TemplateData/docs/index.html).
+
 Individual parts will be documented in the [wiki](https://github.com/jeblad/TemplateData/wiki) at Github, with a local repo placed in the [docs](./docs) subfolder.
