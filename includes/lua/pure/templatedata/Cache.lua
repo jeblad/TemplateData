@@ -17,7 +17,7 @@ end
 function Cache:__call( key, func, ... )
 	if self:exists( key ) then
 		if self:isValid( key ) then
-			return self:touch( key )
+			return self:touch( key ):get( key )
 		end
 
 		self:remove( key )
