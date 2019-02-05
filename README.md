@@ -1,4 +1,4 @@
-# mediawiki-extensions-TemplateData
+# TemplateData
 
 Fork of Extension:TemplateData for Mediawiki. This version has additional code for accessing TemplateData as Lua tables.
 
@@ -12,7 +12,7 @@ This version of the extension can not be installed by the usual tools. In partic
 
 For an ordinary install, download and place the file(s) in a directory called TemplateData in your extensions/ folder. Preferably by doing a
 
-  $ git clone --recursive git@github.com:jeblad/mediawiki-extensions-TemplateData.git .
+  $ git clone --recursive git@github.com:jeblad/TemplateData.git .
 
 Then Add the following code at the bottom of your LocalSettings.php
 
@@ -20,4 +20,4 @@ Then Add the following code at the bottom of your LocalSettings.php
 
 ## Documentation
 
-Individual parts will be documented in the [wiki](https://github.com/jeblad/mediawiki-extensions-TemplateData/wiki) at Github, with a local repo placed in the [docs](./docs) subfolder.
+Individual parts will be documented in the [wiki](https://github.com/jeblad/TemplateData/wiki) at Github, with a local repo placed in the [docs](./docs) subfolder.
