@@ -20,4 +20,4 @@ Then Add the following code at the bottom of your LocalSettings.php
 
 ## Documentation
 
-Individual parts will be documented in the [wiki](/jeblad/mediawiki-extensions-TemplateData/wiki) at Github, with the repo placed in the [docs](./docs) subfolder.
+Individual parts will be documented in the [wiki](https://github.com/jeblad/mediawiki-extensions-TemplateData/wiki) at Github, with a local repo placed in the [docs](./docs) subfolder.
