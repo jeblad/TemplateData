@@ -1,6 +1,18 @@
 local TemplateData = {}
 local php
 
+local root = require 'templatedata/Root'
+
+-- @var metatable for the library
+local mt = {}
+
+function mt:__call( ... )
+	return root.bless( self.load( ... ) )
+
+end
+
+setmetatable( TemplateData, mt )
+
 -- @var reused in load(), initialized in setupInterface()
 local cache = nil
 
