@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../TemplateData.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Metamethods">Metamethods</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Cache.html">Cache</a></li>
+  <li><strong>Root</strong></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/mw.templatedata.html">mw.templatedata</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Root</code></h1>
+<p>Root holding an blessed access to TemplateData proxy.</p>
+<p></p>
+
+
+<h2><a href="#Metamethods">Metamethods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:__index">Root:__index (key)</a></td>
+	<td class="summary">Lookup of missing class members.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:bless">Root:bless (tbl)</a></td>
+	<td class="summary">Bless an existing table into an instance.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:isValid">Root:isValid ()</a></td>
+	<td class="summary">Validate the assumptions.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:hasOrderedParams">Root:hasOrderedParams ()</a></td>
+	<td class="summary">Has ordered params.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:hasSets">Root:hasSets ()</a></td>
+	<td class="summary">Has sets.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:hasMaps">Root:hasMaps ()</a></td>
+	<td class="summary">Has maps.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:getOrderedNames">Root:getOrderedNames ()</a></td>
+	<td class="summary">Get names in order.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:getAllNames">Root:getAllNames ()</a></td>
+	<td class="summary">Get all names.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:isCompletelyOrdered">Root:isCompletelyOrdered ()</a></td>
+	<td class="summary">Is completely ordered.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:getNamesFromSets">Root:getNamesFromSets (...)</a></td>
+	<td class="summary">Get names from sets.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Metamethods"></a>Metamethods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Root:__index"></a>
+    <strong>Root:__index (key)</strong>
+    </dt>
+    <dd>
+    Lookup of missing class members.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         used for lookup of member
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        any
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Root:bless"></a>
+    <strong>Root:bless (tbl)</strong>
+    </dt>
+    <dd>
+    Bless an existing table into an instance.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tbl</span>
+         table to be blessed
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        self
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:isValid"></a>
+    <strong>Root:isValid ()</strong>
+    </dt>
+    <dd>
+    Validate the assumptions.
+ The class makes some assumptions about the blessed reference.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:hasOrderedParams"></a>
+    <strong>Root:hasOrderedParams ()</strong>
+    </dt>
+    <dd>
+    Has ordered params.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:hasSets"></a>
+    <strong>Root:hasSets ()</strong>
+    </dt>
+    <dd>
+    Has sets.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:hasMaps"></a>
+    <strong>Root:hasMaps ()</strong>
+    </dt>
+    <dd>
+    Has maps.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:getOrderedNames"></a>
+    <strong>Root:getOrderedNames ()</strong>
+    </dt>
+    <dd>
+    Get names in order.
+ Order names according to param order.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        list of names
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:getAllNames"></a>
+    <strong>Root:getAllNames ()</strong>
+    </dt>
+    <dd>
+    Get all names.
+ All names, no particular order.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        list of names
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:isCompletelyOrdered"></a>
+    <strong>Root:isCompletelyOrdered ()</strong>
+    </dt>
+    <dd>
+    Is completely ordered.
+ Checks if the param order is complete given the params.
+ All existing params must be ordered, but non-existing params
+ does not matter.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:getNamesFromSets"></a>
+    <strong>Root:getNamesFromSets (...)</strong>
+    </dt>
+    <dd>
+    Get names from sets.
+ This will not maintain any particular order.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+         of names
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        list of names
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-02-06 08:48:31 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

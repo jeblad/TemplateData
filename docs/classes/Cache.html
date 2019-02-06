@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
     <title>Reference</title>
-    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
 
@@ -26,79 +26,95 @@
 <br/>
 <h1>ldoc</h1>
 
+<ul>
+  <li><a href="../TemplateData.html">Index</a></li>
+</ul>
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Functions">Functions</a></li>
+<li><a href="#Metamethods">Metamethods</a></li>
+<li><a href="#Methods">Methods</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h2>Classes</h2>
 <ul class="nowrap">
   <li><strong>Cache</strong></li>
+  <li><a href="../classes/Root.html">Root</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/mw.templatedata.html">mw.templatedata</a></li>
 </ul>
 
 </div>
 
 <div id="content">
 
-<h1>Module <code>Cache</code></h1>
-<p>Lookup of missing class members</p>
+<h1>Class <code>Cache</code></h1>
+<p>Cached values, like tables, to minimize process load.</p>
 <p></p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h2><a href="#Metamethods">Metamethods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#__call">__call (key, func, ...)</a></td>
-	<td class="summary">Call on instance.</td>
+	<td class="name" nowrap><a href="#Cache:__index">Cache:__index (key)</a></td>
+	<td class="summary">Lookup of missing class members</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#create">create (table)</a></td>
+	<td class="name" nowrap><a href="#Cache:__call">Cache:__call (key, func, ...)</a></td>
+	<td class="summary">Call on instance.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Cache:create">Cache:create (...)</a></td>
 	<td class="summary">Create a new instance.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#_init">_init (opts)</a></td>
+	<td class="name" nowrap><a href="#Cache:_init">Cache:_init (opts)</a></td>
 	<td class="summary">Initialize a new instance.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#depth">depth ()</a></td>
+	<td class="name" nowrap><a href="#Cache:depth">Cache:depth ()</a></td>
 	<td class="summary">The depth of the internal structure.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#isConsistent">isConsistent ()</a></td>
+	<td class="name" nowrap><a href="#Cache:isConsistent">Cache:isConsistent ()</a></td>
 	<td class="summary">Consistence check.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#isEmpty">isEmpty ()</a></td>
+	<td class="name" nowrap><a href="#Cache:isEmpty">Cache:isEmpty ()</a></td>
 	<td class="summary">Is the internal structure empty.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#isMax">isMax ()</a></td>
+	<td class="name" nowrap><a href="#Cache:isMax">Cache:isMax ()</a></td>
 	<td class="summary">Is the internal structure above the maximum number.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#insert">insert (key, ...)</a></td>
+	<td class="name" nowrap><a href="#Cache:insert">Cache:insert (key, ...)</a></td>
 	<td class="summary">Cache a given entry.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#remove">remove (key)</a></td>
+	<td class="name" nowrap><a href="#Cache:remove">Cache:remove (key)</a></td>
 	<td class="summary">Remove a given entry.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#isValid">isValid (key)</a></td>
+	<td class="name" nowrap><a href="#Cache:isValid">Cache:isValid (key)</a></td>
 	<td class="summary">Is the cached entry still considered valid.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#exists">exists (key)</a></td>
+	<td class="name" nowrap><a href="#Cache:exists">Cache:exists (key)</a></td>
 	<td class="summary">Does the cached entry exist.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#touch">touch (key)</a></td>
+	<td class="name" nowrap><a href="#Cache:touch">Cache:touch (key)</a></td>
 	<td class="summary">Touch the entry.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#get">get (key)</a></td>
+	<td class="name" nowrap><a href="#Cache:get">Cache:get (key)</a></td>
 	<td class="summary">Retrieve an entry.</td>
 	</tr>
 </table>
@@ -107,12 +123,37 @@
 <br/>
 
 
-    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    <h2 class="section-header "><a name="Metamethods"></a>Metamethods</h2>
 
     <dl class="function">
     <dt>
-    <a name = "__call"></a>
-    <strong>__call (key, func, ...)</strong>
+    <a name = "Cache:__index"></a>
+    <strong>Cache:__index (key)</strong>
+    </dt>
+    <dd>
+    Lookup of missing class members
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         string used for lookup of member
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        any
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Cache:__call"></a>
+    <strong>Cache:__call (key, func, ...)</strong>
     </dt>
     <dd>
     Call on instance.
@@ -142,9 +183,13 @@
 
 
 </dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
     <dt>
-    <a name = "create"></a>
-    <strong>create (table)</strong>
+    <a name = "Cache:create"></a>
+    <strong>Cache:create (...)</strong>
     </dt>
     <dd>
     Create a new instance.
@@ -152,19 +197,24 @@
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">table</span>
-         for options (optional)
+        <li><span class="parameter">...</span>
+         varargs, typically a single table, for options (optional)
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        self
+    </ol>
 
 
 
 
 </dd>
     <dt>
-    <a name = "_init"></a>
-    <strong>_init (opts)</strong>
+    <a name = "Cache:_init"></a>
+    <strong>Cache:_init (opts)</strong>
     </dt>
     <dd>
     Initialize a new instance.
@@ -177,14 +227,19 @@
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        self
+    </ol>
 
 
 
 
 </dd>
     <dt>
-    <a name = "depth"></a>
-    <strong>depth ()</strong>
+    <a name = "Cache:depth"></a>
+    <strong>Cache:depth ()</strong>
     </dt>
     <dd>
     The depth of the internal structure.
@@ -203,8 +258,8 @@
 
 </dd>
     <dt>
-    <a name = "isConsistent"></a>
-    <strong>isConsistent ()</strong>
+    <a name = "Cache:isConsistent"></a>
+    <strong>Cache:isConsistent ()</strong>
     </dt>
     <dd>
     Consistence check.
@@ -223,8 +278,8 @@
 
 </dd>
     <dt>
-    <a name = "isEmpty"></a>
-    <strong>isEmpty ()</strong>
+    <a name = "Cache:isEmpty"></a>
+    <strong>Cache:isEmpty ()</strong>
     </dt>
     <dd>
     Is the internal structure empty.
@@ -243,8 +298,8 @@
 
 </dd>
     <dt>
-    <a name = "isMax"></a>
-    <strong>isMax ()</strong>
+    <a name = "Cache:isMax"></a>
+    <strong>Cache:isMax ()</strong>
     </dt>
     <dd>
     Is the internal structure above the maximum number.
@@ -262,8 +317,8 @@
 
 </dd>
     <dt>
-    <a name = "insert"></a>
-    <strong>insert (key, ...)</strong>
+    <a name = "Cache:insert"></a>
+    <strong>Cache:insert (key, ...)</strong>
     </dt>
     <dd>
     Cache a given entry.
@@ -291,8 +346,8 @@
 
 </dd>
     <dt>
-    <a name = "remove"></a>
-    <strong>remove (key)</strong>
+    <a name = "Cache:remove"></a>
+    <strong>Cache:remove (key)</strong>
     </dt>
     <dd>
     Remove a given entry.
@@ -316,8 +371,8 @@
 
 </dd>
     <dt>
-    <a name = "isValid"></a>
-    <strong>isValid (key)</strong>
+    <a name = "Cache:isValid"></a>
+    <strong>Cache:isValid (key)</strong>
     </dt>
     <dd>
     Is the cached entry still considered valid.
@@ -342,8 +397,8 @@
 
 </dd>
     <dt>
-    <a name = "exists"></a>
-    <strong>exists (key)</strong>
+    <a name = "Cache:exists"></a>
+    <strong>Cache:exists (key)</strong>
     </dt>
     <dd>
     Does the cached entry exist.
@@ -367,8 +422,8 @@
 
 </dd>
     <dt>
-    <a name = "touch"></a>
-    <strong>touch (key)</strong>
+    <a name = "Cache:touch"></a>
+    <strong>Cache:touch (key)</strong>
     </dt>
     <dd>
     Touch the entry.
@@ -393,8 +448,8 @@
 
 </dd>
     <dt>
-    <a name = "get"></a>
-    <strong>get (key)</strong>
+    <a name = "Cache:get"></a>
+    <strong>Cache:get (key)</strong>
     </dt>
     <dd>
     Retrieve an entry.
@@ -426,7 +481,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-05 23:47:26 </i>
+<i style="float:right;">Last updated 2019-02-06 08:48:31 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
