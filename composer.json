@@ -17,6 +17,9 @@
 		"fix": [
 			"phpcbf",
 			"minus-x fix ."
+		],
+		"ldoc": [
+			"ldoc includes/lua includes/lua/pure/templatedata -d docs -o TemplateData"
 		]
 	},
 	"extra": {
