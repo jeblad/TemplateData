@@ -1,11 +1,12 @@
 --- Access to the TemplateData extension, and management of provided data.
 -- @module mw.templatedata
 
--- @var class var for lib
+-- @var class var for TemplateData library
 local TemplateData = {}
 local php
 
-local root = require 'templatedata/Root'
+-- @var class var for Root library
+local Root = require 'templatedata/Root'
 
 -- @var metatable for the library
 local metatable = {}
@@ -16,7 +17,7 @@ local metatable = {}
 -- @param ... varargs passed to @{templatedata.load}
 -- @return Root instance holding TemplateData proxy
 function metatable:__call( ... )
-	return root.bless( self.load( ... ) )
+	return Root.bless( self.load( ... ) )
 end
 
 setmetatable( TemplateData, metatable )
