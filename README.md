@@ -19,10 +19,10 @@ $ git clone --recursive git@github.com:jeblad/TemplateData.git .
 Then add the following code at the bottom of your LocalSettings.php
 
 ```php
-  wfLoadExtension( 'TemplateData' );
+wfLoadExtension( 'TemplateData' );
 ```
 ## Documentation
 
-There are separate generated references for [the inline documentation](https://github.com/jeblad/TemplateData/docs/index.html).
+There are a separate generated [TemplateData references](https://jeblad.github.io/TemplateData/) for the [source docs](docs/).
 
 Individual parts will be documented in the [wiki](https://github.com/jeblad/TemplateData/wiki) at Github, with a local repo placed in the [docs](./docs) subfolder.
