@@ -1,3 +1,7 @@
+--- Access to the TemplateData extension, and management of provided data.
+-- @module mw.templatedata
+
+-- @var class var for lib
 local TemplateData = {}
 local php
 
@@ -6,9 +10,13 @@ local root = require 'templatedata/Root'
 -- @var metatable for the library
 local mt = {}
 
+--- Call on library.
+-- @function mw.templatedata.__call
+-- @usage local root = mw.templatedata( 'Template:Foo' )
+-- @param ... varargs passed to @{templatedata.load}
+-- @return Root instance holding TemplateData proxy
 function mt:__call( ... )
 	return root.bless( self.load( ... ) )
-
 end
 
 setmetatable( TemplateData, mt )
@@ -73,10 +81,11 @@ local function makeReadOnlyProxy( data, seen )
 end
 
 --- Load TemplateData from a page
---
--- @param string title for lookup (optional)
--- @param string langCode for lookup and realization (optional)
--- @return TemplateData as a read-only proxy for the table
+-- @usage local tdata = mw.templatedata.load( 'Template:Foo' )
+-- @function mw.templatedata.load
+-- @param title string for lookup (optional)
+-- @param langCode string for lookup and realization (optional)
+-- @return read-only proxy for the TemplateData table
 function TemplateData.load( title, langCode )
 	local titleType = type( title )
 	title = (titleType == 'string' and title)
@@ -113,6 +122,8 @@ function TemplateData.load( title, langCode )
 end
 
 --- install the module in the global space
+-- @local interface specific
+-- @param options passed on to the cache instance
 function TemplateData.setupInterface( options ) -- luacheck: no unused args
 	-- Boilerplate
 	TemplateData.setupInterface = nil

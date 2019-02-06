@@ -1,36 +1,39 @@
+--- Root holding an blessed access to TemplateData proxy.
+-- @classmod Root
+
 -- @var class var for lib
 local Root = {}
 
---- Lookup of missing class members
--- @param string used for lookup of member
+--- Lookup of missing class members.
+-- @param key used for lookup of member
 -- @return any
 function Root:__index( key ) -- luacheck: no self
 	return Root[key]
 end
 
---- Bless an existing table into an instance
--- @param table t to be blessed
+--- Bless an existing table into an instance.
+-- @function Root.bless
+-- @param tbl table to be blessed
 -- @return self
-function Root.bless( t )
+function Root.bless( tbl )
 
 	local self = setmetatable( {}, Root )
 
-	self._blessed = t or {}
+	self._blessed = tbl or {}
 
 	if not self:isValid() then
-		error('something balked')
-	end
+		self._valid = true
+		self._parameters = {} -- points into the blessed
+		self._aliases = {} --points into the blessed
+		self._values = {} --dangerous, must copy value
 
-	self._parameters = {} -- points into the blessed
-	self._aliases = {} --points into the blessed
-	self._values = {} --dangerous, must copy value
-
-	-- initialize the aliases lookup structure
-	do
-		local params = self._blessed.params or {}
-		for k,v in pairs(params or {}) do
-			for i,w in ipairs((params[k] or {}).aliases) do
-				self._aliases[w] = k
+		-- initialize the aliases lookup structure
+		do
+			local params = self._blessed.params or {}
+			for k,v in pairs(params or {}) do
+				for i,w in ipairs((params[k] or {}).aliases) do
+					self._aliases[w] = k
+				end
 			end
 		end
 	end
@@ -38,10 +41,14 @@ function Root.bless( t )
 	return self
 end
 
---- Validate the assumptions
+--- Validate the assumptions.
 -- The class makes some assumptions about the blessed reference.
 -- @return boolean
 function Root:isValid()
+	if self._valid then
+		return true
+	end
+
 	local types = {
 		params = 'table',
 		format = 'string',
@@ -102,7 +109,25 @@ function Root:isValid()
 	return true
 end
 
---- Get names in order
+--- Has ordered params.
+--@return boolean
+function Root:hasOrderedParams()
+	return not not self._blessed.paramOrder
+end
+
+--- Has sets.
+--@return boolean
+function Root:hasSets()
+	return not not self._blessed.sets
+end
+
+--- Has maps.
+--@return boolean
+function Root:hasMaps()
+	return not not self._blessed.maps
+end
+
+--- Get names in order.
 -- Order names according to param order.
 -- @return list of names
 function Root:getOrderedNames()
@@ -115,7 +140,7 @@ function Root:getOrderedNames()
 	return unpack( collected )
 end
 
---- Get all names
+--- Get all names.
 -- All names, no particular order.
 -- @return list of names
 function Root:getAllNames()
@@ -128,12 +153,12 @@ function Root:getAllNames()
 	return unpack( collected )
 end
 
---- Is complete
--- Checks if the param order is complete.
+--- Is completely ordered.
+-- Checks if the param order is complete given the params.
 -- All existing params must be ordered, but non-existing params
 -- does not matter.
 -- @return boolean
-function Root:isComplete()
+function Root:isCompletelyOrdered()
 	local collected = {}
 
 	for k,_ in pairs( self._blessed.params or {} ) do
@@ -153,9 +178,9 @@ function Root:isComplete()
 	return true
 end
 
---- Get names from sets
+--- Get names from sets.
 -- This will not maintain any particular order.
--- @param varargs of names
+-- @param ... of names
 -- @return list of names
 function Root:getNamesFromSets( ... )
 	local collected = {}
