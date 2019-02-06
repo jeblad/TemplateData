@@ -19,7 +19,7 @@
 			"minus-x fix ."
 		],
 		"ldoc": [
-			"ldoc includes/lua includes/lua/pure/templatedata -d docs -o TemplateData"
+			"ldoc includes/lua includes/lua/pure/templatedata -d docs -o mw.templatedata"
 		]
 	},
 	"extra": {
