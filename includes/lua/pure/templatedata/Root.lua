@@ -30,8 +30,8 @@ function Root.bless( tbl )
 		-- initialize the aliases lookup structure
 		do
 			local params = self._blessed.params or {}
-			for k,v in pairs(params or {}) do
-				for i,w in ipairs((params[k] or {}).aliases) do
+			for k,_ in pairs(params or {}) do
+				for _,w in ipairs((params[k] or {}).aliases) do
 					self._aliases[w] = k
 				end
 			end
@@ -169,7 +169,7 @@ function Root:isCompletelyOrdered()
 		collected[k] = nil
 	end
 
-	for k,v in pairs(collected) do
+	for _,v in pairs(collected) do
 		if v then
 			return false
 		end

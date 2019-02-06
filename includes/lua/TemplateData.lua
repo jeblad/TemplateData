@@ -8,18 +8,18 @@ local php
 local root = require 'templatedata/Root'
 
 -- @var metatable for the library
-local mt = {}
+local metatable = {}
 
 --- Call on library.
 -- @function mw.templatedata.__call
 -- @usage local root = mw.templatedata( 'Template:Foo' )
 -- @param ... varargs passed to @{templatedata.load}
 -- @return Root instance holding TemplateData proxy
-function mt:__call( ... )
+function metatable:__call( ... )
 	return root.bless( self.load( ... ) )
 end
 
-setmetatable( TemplateData, mt )
+setmetatable( TemplateData, metatable )
 
 -- @var reused in load(), initialized in setupInterface()
 local cache = nil
@@ -35,7 +35,7 @@ local function makeReadOnlyProxy( data, seen )
 	local t = {}
 	seen = seen or { [data] = t }
 
-	local function pairsfunc( s, k )
+	local function pairsfunc( _, k )
 		k = next( data, k )
 		if k ~= nil then
 			return k, t[k]
@@ -43,7 +43,7 @@ local function makeReadOnlyProxy( data, seen )
 		return nil
 	end
 
-	local function ipairsfunc( s, i )
+	local function ipairsfunc( _, i )
 		i = i + 1
 		if data[i] ~= nil then
 			return i, t[i]
@@ -62,7 +62,7 @@ local function makeReadOnlyProxy( data, seen )
 			end
 			return v
 		end,
-		__newindex = function ( t, k, v )
+		__newindex = function ()
 			error( "table is read-only", 2 )
 		end,
 		__pairs = function ( tt )
