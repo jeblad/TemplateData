@@ -23,6 +23,6 @@ wfLoadExtension( 'TemplateData' );
 ```
 ## Documentation
 
-There are a separate generated [TemplateData references](https://jeblad.github.io/TemplateData/mw.templatedata.html) for the [source docs](docs/). The generated docs are made by [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html).
+There are a separate [TemplateData references](https://jeblad.github.io/TemplateData/mw.templatedata.html) generated from the [source docs](./docs/). The generated docs are made by [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html).
 
 Individual parts will be documented as necessary in the [wiki](https://github.com/jeblad/TemplateData/wiki) at Github, with a local repo placed in the [topics](./topics) subfolder.
