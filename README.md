@@ -1,5 +1,8 @@
 # TemplateData
 
+![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues-raw/jeblad/Expect?style=for-the-badge)
+
 Fork of Extension:TemplateData for Mediawiki. This version has additional code for accessing TemplateData as Lua tables.
 
 This version is unsupported and could be replaced by functionality in the standard [Extension:TemplateData](https://mediawiki.org/wiki/Extension:TemplateData) or could even inevitably fail due to lack of maintenance.
