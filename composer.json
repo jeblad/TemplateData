@@ -18,6 +18,9 @@
 			"phpcbf",
 			"minus-x fix ."
 		],
+		"unit": [
+			"php ../../tests/phpunit/phpunit.php --wiki wiki --exclude-group LuaStandalone --group TemplateData"
+		],
 		"ldoc": [
 			"ldoc includes/lua includes/lua/pure/templatedata -d docs -o mw.templatedata"
 		]
